@@ -9,14 +9,13 @@ import './App.css';
 function App() {
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
-
   //Load Posenet
   const runPosenet = async () => {
     const net = await posenet.load({
       inputResolution: {width:640, height:480},
       scale: 0.5
     })
-    
+    // Set Interval
     setInterval(() =>{
       detect(net)
     }, 100)
